@@ -36,9 +36,16 @@ Digite o comando unzip -r arquivo.zip<br>
 
 ## 3.2 Através de repositório:<br>
 Navegue até a pasta criada no diretório do Apache<br>
-Rode o comando Git clone https://github.com/Inside-Places/alvara-dourados.git<br>
+Rode o comando Git clone https://github.com/isaacoliveira1/teste-bis2bis<br>
 Após clonar o projeto, na pasta raíz do sistema, crie um arquivo .env é neste arquivo que estará configurado as variáveis de ambiente do sistema.<br>
 Na raiz do projeto, rode o comando composer install para instalar todas as dependências.<br>
+
+# Restaurando o banco de dados<br>
+
+Baixe o arquivo .sql na pasta fornecida<br>
+No MySQL crie uma nova base de dados<br>
+Rode o seguinte comando para importar o arquivo: mysql -uroot -p base_dados < caminho/arquivo.sql onde root é o usuário raiz do banco de dados.
+
 
 # Estrutura do projeto
 

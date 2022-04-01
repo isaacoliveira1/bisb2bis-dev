@@ -4,17 +4,15 @@ namespace App\Entity;
 
 use App\Repository\UsuarioRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UsuarioRepository::class)
  */
-class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
+class Usuario implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -25,15 +23,18 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="string", length=100)
      */
-    private $roles = [];
+    private $role;
 
     /**
-     * @var string The hashed password
      * @ORM\Column(type="string")
      */
     private $password;
+
+    public function __construct() {
+        parent::__construct();
+    }
 
     public function getId(): ?int
     {
@@ -52,75 +53,76 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
-     */
-    public function getUserIdentifier(): string
+
+    public function eraseCredentials()
     {
-        return (string) $this->email;
     }
 
-    /**
-     * @deprecated since Symfony 5.3, use getUserIdentifier instead
-     */
     public function getUsername(): string
     {
         return (string) $this->email;
     }
 
     /**
-     * @see UserInterface
+     * @return mixed
      */
-    public function getRoles(): array
+    public function getRole()
     {
-        $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
-
-        return array_unique($roles);
+        return $this->role;
     }
 
-    public function setRoles(array $roles): self
+    public function getSalt()
     {
-        $this->roles = $roles;
-
-        return $this;
+    }
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role): void
+    {
+        $this->role = $role;
     }
 
     /**
-     * @see PasswordAuthenticatedUserInterface
+     * @return mixed
      */
-    public function getPassword(): string
+    public function getRoles()
+    {
+        return array($this->role);
+    }
+    /**
+     * @return mixed
+     */
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPassword(string $password): self
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
     {
         $this->password = $password;
-
-        return $this;
     }
 
-    /**
-     * Returning a salt is only needed, if you are not using a modern
-     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
-     *
-     * @see UserInterface
-     */
-    public function getSalt(): ?string
+
+    public function serialize()
     {
-        return null;
+        return serialize(array(
+            $this->getId(),
+            $this->getEmail(),
+            $this->password,
+        ));
     }
 
-    /**
-     * @see UserInterface
-     */
-    public function eraseCredentials()
+    public function unserialize($serialized)
     {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+        list (
+            $this->id,
+            $this->email,
+            $this->cpf,
+            $this->password,
+            $this->enabled
+            ) = unserialize($serialized);
     }
 }

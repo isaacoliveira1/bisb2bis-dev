@@ -1,18 +1,63 @@
 {% extends 'base.html.twig' %}
+{% block content %}
 
-{% block body %}
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-    <form action="{{ path('login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+    <!-- Outer Row -->
+    <div class="row justify-content-center vertical-align-items-center align-self-center">
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="_password"/>
+        <div class="col-md-5">
 
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-        <button type="submit">Logar</button>
-    </form>
+            <div class="card o-hidden border-0 shadow-lg my-3">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-12">
+
+
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Autentique-se</h1>
+                                </div>
+                                <form action="{{ path('system_do_login_check') }}" method="post" class="user">
+
+                                    {% if app.session.flashBag.has('error') %}
+                                        <div class="alert alert-danger">
+                                            {% for msg in app.session.flashBag.get('error') %}
+                                                {{ msg }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+
+
+                                    <div class="form-group">
+                                        <input type="email" required autofocus class="form-control form-control-user" name="_username" value="{{ last_username }}" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Entre com seu e-mail...">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" required class="form-control form-control-user" name="_password" id="exampleInputPassword" placeholder="Entre com sua senha">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                                            <label class="custom-control-label" for="customCheck">Salvar meus dados</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        Acessar plataforma
+                                    </button>
+                                </form>
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block page_js %}
+
 {% endblock %}

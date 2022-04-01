@@ -29,11 +29,11 @@
       <change beforePath="$PROJECT_DIR$/../NWL/web" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Symfony/inside_places/src/Controller/DefaultController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Symfony/inside_places/templates/Home/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bis2bis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bis2bis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Usuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../br.com.xbrain/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../br.com.xbrain/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../br.com.xbrain/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
@@ -224,11 +224,27 @@
       <option name="presentableId" value="Default" />
       <updated>1648671816541</updated>
       <workItem from="1648671817816" duration="1351000" />
-      <workItem from="1648771876653" duration="1598000" />
+      <workItem from="1648771876653" duration="2808000" />
+      <workItem from="1648825513505" duration="62000" />
+      <workItem from="1648851555395" duration="1445000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="473" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1648852910465">
+      <screen x="0" y="30" width="1360" height="738" />
+    </state>
+    <state x="473" y="115" key="#com.intellij.ide.util.MemberChooser/0.30.1360.738@0.30.1360.738" timestamp="1648852910465" />
+    <state x="410" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1648851657370">
+      <screen x="0" y="30" width="1360" height="738" />
+    </state>
+    <state x="410" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1360.738@0.30.1360.738" timestamp="1648851657370" />
+    <state x="460" y="154" key="FileChooserDialogImpl" timestamp="1648825576637">
+      <screen x="0" y="30" width="1360" height="738" />
+    </state>
+    <state x="460" y="154" key="FileChooserDialogImpl/0.30.1360.738@0.30.1360.738" timestamp="1648825576637" />
   </component>
 </project>

@@ -36,7 +36,7 @@ Digite o comando unzip -r arquivo.zip<br>
 
 ## 3.2 Através de repositório:<br>
 Navegue até a pasta criada no diretório do Apache<br>
-Rode o comando Git clone https://github.com/isaacoliveira1/teste-bis2bis<br>
+Rode o comando Git clone https://github.com/isaacoliveira1/bisb2bis-dev<br>
 Após clonar o projeto, na pasta raíz do sistema, crie um arquivo .env é neste arquivo que estará configurado as variáveis de ambiente do sistema.<br>
 Na raiz do projeto, rode o comando composer install para instalar todas as dependências.<br>
 
